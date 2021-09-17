@@ -1,38 +1,171 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>JSP 수업내용</title>
+<meta charset="UTF-8">
+<title>My Web page</title>
+<link rel="stylesheet" href="resources/css/header.css"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+	.background {
+		width: 100%;
+		height: 450px;
+	}
+	.tile {
+		width: 150px;
+		height: 150px;
+		background: black;
+		display: inline-block;
+		color: white;
+		transition : 0.5s;
+	}
+	.first-line {
+		margin-top: 10%;
+	}
+	
+	.tile1 {
+		background: powderblue;
+	}
+	
+	.tile-menu:hover {
+		background: darkorange;
+		cursor: pointer;
+		color: white;
+	}
+	
+	.notile{
+		visibility:hidden;
+	}
+	
+	img {
+		height : 400px;
+		width : 100%;
+	}
+</style>
 </head>
 <body>
-<h1>Hello JSP!</h1>
+	<%@ include file="views/common/header.jsp" %>
+	
+	<!-- 타일 모양 화면 -->
+	<div class="background" align="center">
+		<div class="first-line">
+			<div class="tile tile-menu"></div>
+			<div class="tile tile1"></div>
+			<div class="tile tile-menu"></div>
+			<div class="tile notile"></div>
+			<div class="tile tile1"></div>
+		</div>
+		<div class="second-line">
+			<div class="tile notile"></div>
+			<div class="tile tile1"></div>
+			<div class="tile notile"></div>
+			<div class="tile tile1"></div>
+			<div class="tile tile-menu"></div>
+		</div>
+	</div>
+	
+	<hr>
+	<!-- 이미지 슬라이더 (캐러셀:carousel) -->
+		<h2 class="w3-center">Animal Album</h2>
+	<div class="w3-content w3-display-container">
+  	<div class="w3-display-container mySlides w3-animate-fading">
+	  <img src="resources/images/sample/img_sample1.jpg">
+	  <div class="w3-display-bottomright w3-container w3-padding-16 w3-black">
+    	귀여운 화이트 초코 고슴도치
+  	  </div>
+  	</div>
+  	<div class="w3-display-container mySlides w3-animate-fading">
+	  <img src="resources/images/sample/img_sample2.jpg">
+	  <div class="w3-display-topleft w3-container w3-padding-16 w3-black">
+    	귀여운 강아지
+  	  </div>
+  	</div>
+  	<div class="w3-display-container mySlides w3-animate-fading">
+	  <img src="resources/images/sample/img_sample3.jpg">
+	  <div class="w3-display-bottomright w3-container w3-padding-16 w3-black">
+    	귀여운 고양이
+  	  </div>
+  	</div>
+  	<div class="w3-display-container mySlides w3-animate-fading">
+	  <img src="resources/images/sample/img_sample4.jpg">
+	  <div class="w3-display-topleft w3-container w3-padding-16 w3-black">
+    	귀여운 강아지2
+  	  </div>
+  	</div>
+  	<div class="w3-display-container mySlides w3-animate-fading">
+	  <img src="resources/images/sample/img_sample5.gif">
+	  <div class="w3-display-bottomleft w3-container w3-padding-16 w3-black">
+    	제발 주말 과제만은...
+  	  </div>
+  	</div>
+  	<div class="w3-display-container mySlides w3-animate-fading">
+	  <img src="resources/images/sample/img_sample6.gif">
+	  <div class="w3-display-topright w3-container w3-padding-16 w3-black">
+    	사이좋게 나눠먹어야지, 토끼야
+  	  </div>
+  	</div>
+  	<div class="w3-display-container mySlides w3-animate-fading">
+	  <img src="resources/images/sample/img_sample7.gif">
+	  <div class="w3-display-bottomright w3-container w3-padding-16 w3-black">
+    	질서있는 라쿤 친구들
+  	  </div>
+  	</div>
+  	<div class="w3-display-container mySlides w3-animate-fading">
+	  <img src="resources/images/sample/img_sample8.gif">
+	  <div class="w3-display-topleft w3-container w3-padding-16 w3-black">
+    	귀여운 강아지의 움직이는 사진
+  	  </div>
+  	</div>
+  	<div class="w3-display-container mySlides w3-animate-fading">
+	  <img src="resources/images/sample/img_sample9.gif">
+	  <div class="w3-display-topright w3-container w3-padding-16 w3-black">
+    	포동포동 그대여
+  	  </div>
+  	</div>
+	<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+	<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+	<hr>
+	</div>
+	<br><br><br>
 
-<h3>JSP 설명 :</h3>
-<p>
-    JSP(Java Server Page), <br>
-    1997년도에 개발된 Servlet을 사용하던 <br>
-    화면 구현 개발자들이 기존 Servlet에 <br>
-    HTML, CSS 등의 화면 코드를 삽입하는데 <br>
-    어려움을 느껴 자바 개발사에 항의하여<br>
-    1998년에 만들어진 기술이다.<br>
-    이 기술로 인해 Servlet 코드 중 화면 관련 코드를 <br>
-    별도의 JSP로 쪼갬으로써 비즈니스(서비스)영역과 <br>
-    화면 구현 영역을 보다 쉽게 분리할 수 있게 되었다.
-</p>
-
-<hr />
-
-<h3>수업 내용</h3>
-
-<ol>
-    <li><a href="views/01_page.jsp">JSP 태그</a></li>
-    <li><a href="views/02_page.jsp">JSP 라이브러리</a></li>
-    <li><a href="views/03_page.jsp">include 사용하기</a></li>
-    <li><a href="views/04_myPage.jsp">마이 페이지(화면 모듈화)</a></li>
-    <li><a href="views/05_servletAccess.jsp">서블릿 연결하기</a></li>
-</ol>
-
+	<script>
+	
+	var slideIndex = 1;
+	showDivs(slideIndex);
+	
+	function plusDivs(n) {
+	  showDivs(slideIndex += n);
+	}
+	
+	function showDivs(n) {
+	  var i;
+	  var x = document.getElementsByClassName("mySlides");
+	  if (n > x.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = x.length}
+	  for (i = 0; i < x.length; i++) {
+	     x[i].style.display = "none";  
+	  }
+	  x[slideIndex-1].style.display = "block";  
+	}
+	
+	</script>
+	<%@ include file="views/common/footer.jsp" %>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
